@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complejo Turístico Suyana</title>
+    <link rel="stylesheet" href="src/css/principal.css">
+    <script type="module" src="src/recursos/js/index.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__barra">
+            <div class="header__logo">
+                <h1 class="header__titulo">Suyana</h1>
+            </div>
+            <button class="header__toggle" id="btn-menu">
+                <span class="header__toggle-linea"></span>
+                <span class="header__toggle-linea"></span>
+                <span class="header__toggle-linea"></span>
+            </button>
+        </div>
+        <nav class="header__nav" id="nav-menu">
+            <ul class="header__lista">
+                <li class="header__item"><a href="#inicio" class="header__enlace">INICIO</a></li>
+                <li class="header__item"><a href="#nosotros" class="header__enlace">SOBRE NOSOTROS</a></li>
+                <li class="header__item"><a href="#servicios" class="header__enlace">SERVICIOS</a></li>
+                <li class="header__item"><a href="#contacto" class="header__enlace">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="inicio" class="banner">
+            <div class="banner__slider">
+                <img src="src/imagenes/banner.jpg" alt="Vista panorámica de Cabañas Suyana" class="banner__imagen">
+                <h2 class="banner__texto">Bienvenidos a Cabañas Suyana</h2>
+            </div>
+        </section>
+
+        <section id="nosotros" class="nosotros">
+            <h2 class="nosotros__titulo">SOBRE NOSOTROS</h2>
+            <p class="nosotros__texto">
+                Cabañas Suyana es un emprendimiento familiar con más de diez años de trayectoria, pensado para quienes
+                buscan desconectarse del ritmo de la ciudad y reencontrarse con la naturaleza. Nuestro predio de cuatro
+                hectáreas, con una vista privilegiada a las sierras, ofrece un entorno tranquilo y natural donde cada
+                rincón invita al descanso. Crecimos con la convicción de brindar una experiencia cálida y hogareña,
+                atendida por la propia familia, cuidando cada detalle para que tu estadía sea inolvidable. Silencio,
+                aire puro y paisaje serrano se combinan en Cabañas Suyana para ofrecerte unas vacaciones a pura
+                naturaleza.
+            </p>
+            <div class="nosotros__iconos">
+                <div class="nosotros__icono">
+                    <img src="src/icons/WIFI.svg" alt="Servicio de Wi-Fi" class="nosotros__img-icono">
+                </div>
+                <div class="nosotros__icono">
+                    <img src="src/icons/CABALLO.svg" alt="Cabalgatas" class="nosotros__img-icono">
+                </div>
+                <div class="nosotros__icono">
+                    <img src="src/icons/NATACION.svg" alt="Pileta" class="nosotros__img-icono">
+                </div>
+                <div class="nosotros__icono">
+                    <img src="src/icons/DESAYUNO.svg" alt="Desayuno incluido" class="nosotros__img-icono">
+                </div>
+                <div class="nosotros__icono">
+                    <img src="src/icons/SENDERISMO.svg" alt="Trekking" class="nosotros__img-icono">
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="servicios">
+            <div class="servicios__contenedor">
+                <h2 class="servicios__titulo">NUESTROS<br>SERVICIOS</h2>
+                <div class="servicios__detalle">
+                    <p class="servicios__texto">En Cabañas Suyana nos ocupamos de cada detalle para que tu única
+                        preocupación sea disfrutar. Contamos con:</p>
+                    <p class="servicios__destacado">Ropa blanca incluida. Desayuno. Pileta y quincho.<br>Cancha de
+                        básquet. Cabalgatas. Wifi.<br>Aire acondicionado. Cochera privada. Asador privado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="galeria" id="galeria">
+            <h2 class="galeria__titulo">GALERÍA DE IMÁGENES</h2>
+            <div class="galeria__grid">
+                <div class="galeria__item"><img src="src/imagenes/galeria/foto-cama.webp" alt="Interior cabaña"></div>
+                <div class="galeria__item"><img src="src/imagenes/galeria/vista-la-montana.webp" alt="Vista a la montaña"></div>
+                <div class="galeria__item"><img src="src/imagenes/galeria/vista-la-montana-2.webp" alt="Parque del complejo"></div>
+                <div class="galeria__item galeria__item--oculto-pc"><img src="src/imagenes/catalogo/cabana-grande.webp" alt="Cabaña exterior"></div>
+                <div class="galeria__item galeria__item--oculto"><img src="src/imagenes/catalogo/piscina-y-quincho.jpg" alt="Piscina"></div>
+                <div class="galeria__item galeria__item--oculto"><img src="src/imagenes/catalogo/cabana-asador-cubierto.jpg" alt="Asador"></div>
+            </div>
+            <button class="boton boton--claro" id="btn-ver-mas-galeria">VER MÁS</button>
+        </section>
+
+        <section class="cabanas" id="cabanas">
+            <div class="cabanas__cabecera">
+                <h2 class="cabanas__titulo">NUESTRAS CABAÑAS</h2>
+                <div class="cabanas__filtro-contenedor">
+                    <div class="cabanas__filtro">
+                        <label>Filtrar por capacidad:</label>
+                        <div class="filtro-custom" id="filtro-custom">
+                            <div class="filtro-custom__seleccionado" id="filtro-seleccionado">Ver todas</div>
+                            <ul class="filtro-custom__opciones">
+                                <li class="filtro-custom__opcion seleccionado" data-value="todas">Ver todas</li>
+                                <li class="filtro-custom__opcion" data-value="2">Para 2 personas</li>
+                                <li class="filtro-custom__opcion" data-value="3">Para 3 personas</li>
+                                <li class="filtro-custom__opcion" data-value="4">Para 4 personas</li>
+                                <li class="filtro-custom__opcion" data-value="5">Para 5 personas</li>
+                                <li class="filtro-custom__opcion" data-value="6">Para 6 personas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cabanas__grid" id="contenedor-cabanas"></div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <h2 class="contacto__titulo">CONTACTO</h2>
+            <div class="contacto__contenedor">
+                <div class="contacto__info">
+                    <ul class="contacto__lista">
+                        <li class="contacto__item">¡Visitanos!</li>
+                        <li class="contacto__item">📍 Las Rabonas, Valle de Traslasierra, Provincia de Córdoba,
+                            Argentina.</li>
+                        <li class="contacto__item">Escribinos por el formulario con las fechas que tenés pensadas y te
+                            respondemos a la brevedad.</li>
+                    </ul>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54217.43398991444!2d-65.04838661605333!3d-31.868725835678434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2c20689b91ea9%3A0x29bb5e90d81b3127!2sLas%20Rabonas%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1714000000000!5m2!1ses-419!2sar"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <form class="formulario" id="formulario-contacto">
+                    <label class="formulario__label">Nombre y Apellido*</label>
+                    <input class="formulario__input" type="text" required>
+
+                    <label class="formulario__label">Correo electrónico*</label>
+                    <input class="formulario__input" type="email" required>
+
+                    <label class="formulario__label">Teléfono*</label>
+                    <input class="formulario__input" type="tel" pattern="[0-9]+" title="Por favor, ingrese solamente números" inputmode="numeric" required>
+
+                    <label class="formulario__label">Mensaje</label>
+                    <textarea class="formulario__textarea" rows="4"></textarea>
+
+                    <button class="boton boton--claro formulario__boton" type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Página web desarrollada por alumnos de IES Siglo 21 con fines educativos académicos.
+        </p>
+    </footer>
+
+    <dialog class="modal" id="modal-info">
+        <div class="modal__caja">
+            <button class="modal__cerrar" id="cerrar-modal">X</button>
+            <h3 class="modal__titulo" id="modal-titulo">Nombre de cabaña</h3>
+            <p class="modal__subtitulo" id="modal-subtitulo">CAPACIDAD</p>
+            <p class="modal__texto" id="modal-descripcion">Descripción...</p>
+            <div class="modal__acciones">
+                <a href="#galeria" class="boton boton--claro" id="btn-ver-fotos-modal">VER IMÁGENES</a>
+                <a href="#" target="_blank" class="boton boton--claro" id="btn-reservar-modal">CONSULTAR DISPONIBILIDAD
+                    Y PRECIO</a>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="modal-lightbox" id="lightbox-galeria">
+        <div class="lightbox__contenido">
+            <button class="modal__cerrar" id="cerrar-lightbox">X</button>
+            <img src="" alt="Imagen ampliada" id="lightbox-img">
+        </div>
+    </dialog>
+</body>
+
+</html>

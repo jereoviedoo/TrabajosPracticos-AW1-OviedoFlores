@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabañas — Complejo Turístico Suyana</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación MPA -->
+    <header class="header">
+        <div class="logo">
+            <h1>Suyana</h1>
+            <span>Complejo Turístico</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="cabanas.html" class="active">Cabañas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <section class="head-section">
+            <h2>Nuestros Alojamientos</h2>
+            <p>Conoce nuestras cabañas equipadas en medio de la naturaleza de las sierras.</p>
+        </section>
+
+        <!-- Catálogo de Cabañas -->
+        <section class="catalogo-grid">
+            
+            <!-- Tarjeta Cabaña 1: Familiar -->
+            <article class="card-cabana">
+                <figure class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800&q=80" alt="Vista exterior de la Cabaña Familiar en las sierras">
+                    <figcaption>Cabaña Familiar - Hasta 5 personas</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h3>Cabaña Familiar</h3>
+                    <p>Espaciosa opción de 2 plantas equipada con cocina completa, asador privado, gran jardín y vista panorámica.</p>
+                    <ul class="features-list">
+                        <li>🌲 2 Dormitorios</li>
+                        <li>🔥 Asador individual</li>
+                        <li>📶 Wi-Fi de alta velocidad</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-modal" data-target="modal-familiar" aria-haspopup="dialog">
+                        Ver detalles
+                    </button>
+                </div>
+            </article>
+
+            <!-- Tarjeta Cabaña 2: Premium -->
+            <article class="card-cabana">
+                <figure class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Cabaña Premium con ventanales y deck de madera">
+                    <figcaption>Cabaña Premium - De 2 a 3 personas</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h3>Cabaña Premium</h3>
+                    <p>Diseño moderno estilo alpino, hidromasaje privado, deck con reposeras y vista directa a las sierras.</p>
+                    <ul class="features-list">
+                        <li>🛁 Hidromasaje privado</li>
+                        <li>☕ Desayuno artesanal</li>
+                        <li>❄️ Climatización frío/calor</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-modal" data-target="modal-premium" aria-haspopup="dialog">
+                        Ver detalles
+                    </button>
+                </div>
+            </article>
+
+            <!-- Tarjeta Cabaña 3: Suite Parejas -->
+            <article class="card-cabana">
+                <figure class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80" alt="Cabaña de madera acogedora entre arboles">
+                    <figcaption>Suite Deluxe - Parejas (2 pers.)</figcaption>
+                </figure>
+                <div class="card-content">
+                    <h3>Suite Deluxe</h3>
+                    <p>Espacio íntimo y acogedor, pensado para escapadas románticas. Cuenta con estufa a leña y balcón privado.</p>
+                    <ul class="features-list">
+                        <li>🪵 Estufa a leña</li>
+                        <li>🥂 Champán de bienvenida</li>
+                        <li>🌄 Vista al atardecer</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-modal" data-target="modal-deluxe" aria-haspopup="dialog">
+                        Ver detalles
+                    </button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Ventanas Modales (SPA Interactivo) -->
+
+    <!-- Modal 1: Cabaña Familiar -->
+    <div id="modal-familiar" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tit-familiar" hidden>
+        <div class="modal-box">
+            <button type="button" class="btn-cerrar" aria-label="Cerrar modal">&times;</button>
+            <h3 id="tit-familiar">Detalles — Cabaña Familiar</h3>
+            <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800&q=80" alt="Interior Cabaña Familiar" class="modal-img">
+            <p>La cabaña Familiar está equipada pensando en la comodidad de toda la familia. Incluye vajilla completa, microondas, heladera con freezer, TV Smart de 43", cochera cubierta individual y parque con juegos.</p>
+            <a href="contacto.html" class="btn btn-success">Reservar Cabaña Familiar</a>
+        </div>
+    </div>
+
+    <!-- Modal 2: Cabaña Premium -->
+    <div id="modal-premium" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tit-premium" hidden>
+        <div class="modal-box">
+            <button type="button" class="btn-cerrar" aria-label="Cerrar modal">&times;</button>
+            <h3 id="tit-premium">Detalles — Cabaña Premium</h3>
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Interior Cabaña Premium" class="modal-img">
+            <p>Pensada para quienes buscan el máximo confort. Posee baño en suite con bañera de hidromasaje, sommier de 2 plazas King Size, cafetera de cápsulas y servicio de sombrilla en la piscina.</p>
+            <a href="contacto.html" class="btn btn-success">Reservar Cabaña Premium</a>
+        </div>
+    </div>
+
+    <!-- Modal 3: Suite Deluxe -->
+    <div id="modal-deluxe" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tit-deluxe" hidden>
+        <div class="modal-box">
+            <button type="button" class="btn-cerrar" aria-label="Cerrar modal">&times;</button>
+            <h3 id="tit-deluxe">Detalles — Suite Deluxe</h3>
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80" alt="Interior Suite Deluxe" class="modal-img">
+            <p>Un ambiente cálido rodeado de arboleda nativa. Ofrece privacidad total, cama matrimonial confort, frigobar y terraza privada con vista a las estrellas.</p>
+            <a href="contacto.html" class="btn btn-success">Reservar Suite Deluxe</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Complejo Turístico Suyana — Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script para funcionalidad de modales -->
+    <script src="js/script.js"></script>
+</body>
+</html>

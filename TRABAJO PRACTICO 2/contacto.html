@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — Complejo Turístico Suyana</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Suyana</h1>
+            <span>Complejo Turístico</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="cabanas.html">Cabañas</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Contacto y Reservas</h2>
+        <form action="#" method="POST" class="form-contacto">
+            <fieldset>
+                <legend>Consulta Directa</legend>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Sofía Francia">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="cabana-select">Cabaña de interés</label>
+                    <select id="cabana-select" name="cabana">
+                        <option value="">-- Seleccionar opción --</option>
+                        <option value="familiar">Cabaña Familiar (hasta 5 pers.)</option>
+                        <option value="premium">Cabaña Premium (2-3 pers.)</option>
+                        <option value="deluxe">Suite Deluxe (2 pers.)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Consulta o Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Indica fechas estimadas o dudas..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Enviar Consulta</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Complejo Turístico Suyana — Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

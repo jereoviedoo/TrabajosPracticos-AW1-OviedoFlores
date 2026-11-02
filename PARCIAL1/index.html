@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración Parcial - Tema 4</title>
+    <!-- Vinculación correcta de hoja de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <main class="contenedor-principal">
+        
+        <!-- PARTE 1: DEMOSTRACIÓN DE FLUJO HTML (Bloque vs Línea) -->
+        <section class="demostracion-flujo">
+            <h2>1. Comportamiento de Flujo Normal</h2>
+            
+            <!-- Elemento de bloque: Ocupa todo el ancho y fuerza salto de línea -->
+            <p class="bloque">
+                Soy un párrafo, por lo tanto soy un elemento de comportamiento de bloque.
+                Nota cómo el siguiente enlace: <a href="#" class="linea">SOY UN ENLACE</a>, no quiebra el texto de este párrafo porque es un elemento de línea que solo ocupa el tamaño de sus propias letras.
+            </p>
+
+            <!-- Excepción de la regla de anidación (Etiqueta <a> envolviendo un bloque) -->
+            <a href="#" class="enlace-excepcion">
+                <article class="tarjeta-bloque">
+                    <h3>Excepción de Anidación en HTML5</h3>
+                    <p>Aunque la etiqueta "a" es de línea, HTML5 permite que envuelva este bloque completo ("article") para hacerlo clickeable.</p>
+                </article>
+            </a>
+            
+            <!-- Elementos de línea ubicados contiguos -->
+            <img src="https://via.placeholder.com/150x50" alt="Ejemplo placeholder" class="linea">
+            <a href="#" class="linea">Soy otro elemento de línea (enlace) justo al lado de la imagen.</a>
+        </section>
+
+        <!-- PARTE 2: DEMOSTRACIÓN DE ESPECIFICIDAD CSS Y CASCADA -->
+        <section class="demostracion-especificidad">
+            <h2>2. Conflicto de Especificidad CSS</h2>
+            
+            <!-- Este párrafo tiene una etiqueta (p), una clase (.mensaje-prueba) y un ID (#alerta-critica) -->
+            <p id="alerta-critica" class="mensaje-prueba">
+                ¿De qué color será mi fondo? Revisa el archivo CSS para ver el cálculo del algoritmo resolviendo el conflicto.
+            </p>
+        </section>
+
+    </main>
+</body>
+</html>

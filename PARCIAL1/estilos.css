@@ -1,0 +1,118 @@
+/* =========================================================
+   RESETEO BÁSICO
+   ========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* =========================================================
+   PARTE 1: DEMOSTRACIÓN DE FLUJO NORMAL (BLOQUE VS LÍNEA)
+   ========================================================= */
+
+.demostracion-flujo {
+    margin-bottom: 50px;
+}
+
+/* Comportamiento de Bloque */
+.bloque {
+    background-color: #e2e8f0;
+    border: 2px solid #3b82f6;
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Comportamiento natural: display: block; ocupa el 100% del ancho */
+}
+
+/* Comportamiento de Línea */
+.linea {
+    background-color: #fef08a;
+    border: 2px dashed #ca8a04;
+    padding: 5px;
+    /* Comportamiento natural: display: inline; se acomodan uno al lado del otro */
+}
+
+/* Excepción de HTML5: <a> envolviendo un bloque */
+.enlace-excepcion {
+    text-decoration: none;
+    color: inherit;
+    /* Aunque <a> es inline, al tener un bloque adentro se adapta para envolverlo */
+}
+
+.tarjeta-bloque {
+    background-color: #dcfce7;
+    border: 2px solid #22c55e;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.tarjeta-bloque:hover {
+    background-color: #bbf7d0; /* Demostrando la interactividad del área */
+}
+
+
+/* =========================================================
+   PARTE 2: CASO DE PRUEBA - ALGORITMO DE ESPECIFICIDAD
+   Se aplican tres reglas al mismo párrafo <p id="alerta-critica" class="mensaje-prueba">
+   ========================================================= */
+
+/* Regla A: Selector de Tipo (Etiqueta) */
+/* Especificidad matemática: 0-0-1 (Cero IDs, Cero Clases, Una Etiqueta) */
+p {
+    background-color: #cbd5e1; /* Gris */
+    padding: 20px;
+    font-size: 18px;
+    border: 3px solid transparent;
+}
+
+/* Regla B: Selector de Clase */
+/* Especificidad matemática: 0-1-0 (Cero IDs, Una Clase, Cero Etiquetas) */
+/* Al tener 0-1-0, vence al 0-0-1 de la etiqueta 'p' */
+.mensaje-prueba {
+    background-color: #93c5fd; /* Azul claro */
+    font-weight: bold;
+}
+
+/* Regla C: Selector de ID */
+/* Especificidad matemática: 1-0-0 (Un ID, Cero Clases, Cero Etiquetas) */
+/* ¡ESTA ES LA REGLA QUE PREVALECE! 1-0-0 es matemáticamente mayor que 0-1-0 y 0-0-1. */
+#alerta-critica {
+    background-color: #fca5a5; /* Rojo claro (Este será el fondo visible en el navegador) */
+    border-color: #dc2626;     /* Borde Rojo fuerte */
+    color: #7f1d1d;            /* Texto rojo oscuro */
+}
+
+/* 
+CONCLUSIÓN DEMOSTRADA: 
+Aunque la regla de la etiqueta "p" y la clase ".mensaje-prueba" existen, el navegador 
+resuelve el conflicto pintando el fondo de color rojo claro (#fca5a5) porque el selector 
+por ID tiene la especificidad más alta (1-0-0). 
+
+BUENA PRÁCTICA APLICADA: 
+No fue necesario utilizar la declaración !important para anular a los demás, 
+ya que el conocimiento de las matemáticas de especificidad permite controlar 
+la cascada de forma natural.
+*/

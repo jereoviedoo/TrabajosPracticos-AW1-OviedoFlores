@@ -1,0 +1,775 @@
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../font/DM_Sans/DMSansRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../font/PlayfairDisplay/PlayfairDisplayRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-oliva: #7d8442;
+    --color-marron: #8b4513;
+    --color-marron-oscuro: #6b340e;
+    --color-beige: #e8ddc5;
+    --color-gris-claro: #e0e0e0;
+    --color-blanco: #ffffff;
+    --color-texto-oscuro: #333333;
+    
+    --fuente-principal: 'DM Sans', sans-serif;
+    --fuente-titulos: 'Playfair Display', serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    scroll-margin-top: 65px; 
+}
+
+.boton {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+.boton--claro {
+    background-color: var(--color-beige);
+    color: var(--color-texto-oscuro);
+}
+
+.boton--oliva {
+    background-color: var(--color-oliva);
+    color: var(--color-blanco);
+}
+
+
+.nosotros, .servicios, .galeria, .cabanas, .contacto {
+    padding: 40px 20px; 
+    text-align: center;
+}
+
+
+.header {
+    background-color: var(--color-oliva);
+    color: var(--color-blanco);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.header__barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__titulo {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: var(--fuente-titulos); 
+}
+
+.header__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+}
+
+.header__toggle-linea {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-blanco);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header__nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: var(--color-oliva);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.header__nav.activo {
+    max-height: 250px; 
+}
+
+.header__lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.header__enlace {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 0;
+}
+
+.banner {
+    background-color: var(--color-gris-claro);
+    height: 60vh;
+}
+
+.banner__slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+.banner__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+}
+
+.banner__texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-blanco);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    width: 95%;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-family: var(--fuente-titulos); 
+}
+
+.nosotros {
+    background-color: var(--color-marron);
+    color: var(--color-blanco);
+}
+
+.nosotros__titulo {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.nosotros__texto {
+    font-size: 1rem;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.nosotros__iconos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nosotros__icono {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-blanco);
+    border-radius: 50%;
+    color: var(--color-marron);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotros__img-icono {
+    width: 70%; 
+    height: auto;
+    object-fit: contain; 
+}
+
+.servicios {
+    background-color: var(--color-blanco);
+}
+
+.servicios__titulo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.servicios__destacado {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.galeria {
+    background-color: var(--color-marron);
+    color: var(--color-blanco);
+}
+
+.galeria__titulo, .cabanas__titulo, .contacto__titulo {
+    margin-bottom: 40px;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.galeria__grid,
+.cabanas__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+}
+
+.cabanas {
+    background-color: var(--color-blanco);
+    padding-bottom: 30px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta__imagen {
+    background-color: var(--color-gris-claro);
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tarjeta__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta__titulo {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.galeria__item {
+    background-color: var(--color-gris-claro);
+    height: 120px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.galeria__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.galeria__item img:hover {
+    transform: scale(1.05);
+}
+
+.galeria__item--oculto {
+    display: none;
+}
+.galeria__item.mostrar {
+    display: block !important;
+}
+
+.contacto {
+    padding-top: 30px;
+}
+
+.contacto__contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.contacto__info {
+    display: contents;
+}
+
+.contacto__lista {
+    list-style: none;
+    order: 1;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.formulario {
+    order: 2;
+    width: 100%;
+    background-color: var(--color-oliva);
+    padding: 30px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: var(--color-blanco);
+}
+
+.contacto__mapa, .contacto__info iframe {
+    order: 3;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+.formulario__label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.formulario__input,
+.formulario__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-gris-claro);
+    font-family: var(--fuente-principal);
+}
+
+.formulario__textarea {
+    resize: none; 
+}
+
+.formulario__boton {
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+.cabanas__cabecera {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    margin-bottom: 30px;
+}
+
+.cabanas__titulo {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.cabanas__filtro-contenedor {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.cabanas__filtro {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.cabanas__filtro label {
+    font-weight: bold;
+    color: var(--color-marron-oscuro);
+    font-size: 0.9rem;
+}
+
+.filtro-custom {
+    position: relative;
+    width: 100%;
+    min-width: 180px; 
+    max-width: 200px;
+    font-family: var(--fuente-principal);
+}
+
+.filtro-custom__seleccionado {
+    padding: 8px 30px 8px 15px; 
+    font-size: 0.9rem; 
+    font-weight: bold;
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-beige);
+    border: 2px solid var(--color-oliva);
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.filtro-custom__seleccionado::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color-oliva) transparent transparent transparent;
+    transition: transform 0.3s ease;
+}
+
+.filtro-custom.activo .filtro-custom__seleccionado {
+    border-radius: 20px 20px 0 0;
+}
+
+.filtro-custom.activo .filtro-custom__seleccionado::after {
+    transform: translateY(-50%) rotate(180deg);
+    top: 40%;
+}
+
+.filtro-custom__opciones {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-blanco);
+    border: 2px solid transparent; 
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0; 
+    visibility: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.filtro-custom.activo .filtro-custom__opciones {
+    max-height: 300px; 
+    border-color: var(--color-oliva); 
+    opacity: 1;
+    visibility: visible;
+}
+
+.filtro-custom__opcion {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-texto-oscuro);
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.filtro-custom__opcion:hover {
+    background-color: var(--color-beige);
+}
+
+.filtro-custom__opcion.seleccionado {
+    background-color: var(--color-oliva);
+    color: var(--color-blanco);
+}
+
+dialog.modal {
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 800px;
+    width: 95%;
+}
+
+dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+dialog.modal[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__caja {
+    background-color: var(--color-marron);
+    color: var(--color-blanco);
+    padding: 30px 20px;
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.modal__cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-beige);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal__acciones {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin-top: 25px;
+    align-items: stretch;
+}
+
+.modal__acciones .boton {
+    width: 100%; 
+}
+
+dialog.modal-lightbox {
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 90vh;
+}
+
+dialog.modal-lightbox::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox__contenido {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox__contenido img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#cerrar-lightbox {
+    position: absolute;
+    top: 15px; 
+    right: 15px;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.footer {
+    background-color: var(--color-marron-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.8rem;
+}
+
+
+
+@media (min-width: 768px) {
+    
+    section {
+        scroll-margin-top: 85px;
+    }
+
+    .boton {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .banner {
+        height: calc(100vh - 75px);
+    }
+
+    .banner__texto {
+        font-size: 4rem;
+        width: 80%;
+    }
+
+    .nosotros, .servicios, .galeria, .cabanas, .contacto {
+        padding: 100px 50px;
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 50px;
+    }
+
+    .header__barra {
+        width: auto;
+    }
+
+    .header__toggle {
+        display: none; 
+    }
+
+    .header__nav {
+        max-height: none; 
+        overflow: visible;
+        width: auto;
+        position: static; 
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .header__lista {
+        flex-direction: row;
+        margin-top: 0;
+        margin-bottom: 0;
+        gap: 40px;
+    }
+
+    .nosotros__iconos {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .nosotros__icono {
+        width: 100px;
+        height: 100px;
+    }
+
+    .servicios__contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        text-align: left;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .galeria__grid,
+    .cabanas__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+    }
+
+    .tarjeta__imagen {
+        height: 250px;
+    }
+
+    .tarjeta__titulo {
+        font-size: 1.2rem;
+    }
+
+    .galeria__item {
+        height: 250px;
+    }
+
+    .cabanas__filtro-contenedor {
+        justify-content: flex-end;
+    }
+    
+    .cabanas__filtro {
+        flex-direction: row; 
+        width: auto;
+    }
+    
+    .filtro-custom {
+        min-width: 220px;
+    }
+
+    .contacto__contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contacto__info {
+        display: block; 
+        width: 45%;
+    }
+
+    .contacto__lista {
+        order: unset;
+        margin-bottom: 30px;
+    }
+
+    .formulario {
+        order: unset;
+        width: 55%;
+        padding: 40px;
+    }
+
+    .contacto__info iframe {
+        order: unset;
+        height: 300px;
+        margin-top: 0;
+    }
+
+    .modal__caja {
+        padding: 40px;
+    }
+
+    .modal__acciones {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .modal__acciones .boton {
+        width: auto;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+
+    .galeria__item--oculto-pc {
+        display: none;
+    }
+}

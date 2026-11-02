@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración: HTML y CSS. </title>
+    <!--CSS que da estilo al html-->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- JERARQUÍA DE TÍTULOS Y FLUJO NORMAL
+         Niveles de encabezados y  comportamiento por defecto de bloques y lineas. -->
+    <header class="encabezado-principal">
+        <h1>Tema 4: Jerarquía HTML y Especificidad CSS</h1>
+        <p>Demostración práctica. Estudiante: Oviedo Flores, Leandro Jeremías</p>
+    </header>
+
+    <main class="contenedor-global">
+        
+        <section class="demostracion-jerarquia">
+            <h2>1. Jerarquía de Bloques y Flujo Normal</h2>
+            <p>En el desarrollo web, el marcado semántico de HTML define la jerarquía de la información. El navegador posiciona estos elementos siguiendo el flujo normal del documento.</p>
+            
+            <div class="caja-ejemplo">
+                <h3>Ejemplo de Encabezados (h1 al h6)</h3>
+                <p>Los encabezados son elementos de bloque por excelencia. Noten cómo cada nivel disminuye en importancia semántica, forzando siempre un salto de línea:</p>
+                <!-- Demostración  de jerarquía en texos -->
+                <h1>Título Principal (h1 - ya usado en el header)</h1>
+                <h2>Sección (h2)</h2>
+                <h3>Sub-sección (h3)</h3>
+                <h4>Detalle (h4)</h4>
+                <h5>Sub-detalle (h5)</h5>
+                <h6>Nota menor (h6)</h6>
+            </div>
+
+            <div class="caja-ejemplo">
+                <h3>Comportamiento de Imágenes (Elementos de línea)</h3>
+                <p>Las imágenes (<code>&lt;img&gt;</code>) son nativamente elementos de línea. A continuación, vemos dos imágenes contiguas que, por defecto, se ubican una al lado de la otra sin quebrar el texto, hasta que el CSS intervenga.</p>
+                <!-- imagen una al lado de la otra -->
+                <img src="../NUEVO/src/imagenes/comparativa.jpeg" alt="Ejemplo imagen 1" class="imagen-demostracion">
+                <img src="../NUEVO/src/imagenes/COMPARATIVA2.png" alt="Ejemplo imagen 2" class="imagen-demostracion">
+            </div>
+        </section>
+
+        <!--  LA EXCEPCIÓN DE ANIDACIÓN Y WCAG -->
+        <section class="demostracion-anidacion">
+            <h2>2. Integridad Estructural y la Excepción HTML5</h2>
+            <p>Para preservar la integridad estructural y garantizar la accesibilidad bajo las normativas WCAG, existe una regla de oro en la anidación: jamás se debe colocar un bloque dentro de un elemento de línea, dado que el lenguaje reserva esa jerarquía exclusivamente para el contenido de frase.</p>
+            
+            <p>Sin embargo, HTML5 introdujo una excepción vital para el diseño de interfaces modernas: la etiqueta de ancla "a". Al poseer un modelo de contenido transparente, esta etiqueta tiene la capacidad de envolver bloques enteros.</p>
+
+            
+            <!-- Enlace dentro un bloque entero (article) -->
+            <a href="#" class="enlace-transparente">
+                <article class="tarjeta-interactiva">
+                    <h3>Área Interactiva Completa</h3>
+                    <p>Todo este bloque es clickeable. HTML5 permite esto sin romper la validación del código ni alterar el sentido semántico.</p>
+                </article>
+            </a>
+        </section>
+
+        <!-- SECCIÓN 3: CASCADA Y ESPECIFICIDAD CSS-->
+
+        <section class="demostracion-especificidad">
+            <h2>3. CSS: El Algoritmo de Especificidad</h2>
+            <p>Mientras HTML provee el esqueleto lógico, CSS interactúa moldeando la presentación. Cuando surgen conflictos porque múltiples reglas de estilo apuntan a un mismo nodo, el navegador no decide al azar, sino que aplica una fórmula matemática: el algoritmo de especificidad.</p>
+
+            <!-- CASO DE PRUEBA DEL ALGORITMO -->
+            <div class="caja-ejemplo">
+                <h3>Prueba de Conflicto en Vivo</h3>
+                <p>El siguiente bloque tiene una etiqueta (blockquote), una clase (.peso-intermedio) y un ID (#autoridad-alta). Revisa los comentarios en el CSS para ver la matemática aplicada.</p>
+                
+                <blockquote id="autoridad-alta" class="peso-intermedio">
+                    <p>
+                        "Mantener una especificidad baja, basando la arquitectura visual principalmente en clases, se considera como una buena práctica profesional, asegurando la escalabilidad del código y evitando recurrir al uso de la declaración !important, un antipatrón que quiebra violentamente el flujo natural de la cascada."
+                    </p>
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
