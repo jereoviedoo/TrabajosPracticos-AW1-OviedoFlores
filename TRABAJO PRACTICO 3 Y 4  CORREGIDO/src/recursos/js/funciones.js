@@ -26,9 +26,17 @@ function filtrarPorCapacidad(arregloCabanas, capacidadSeleccionada) {
     
     const personasBuscadas = parseInt(capacidadSeleccionada);
     
-    return arregloCabanas.filter((cabana) => {
-        return cabana.capacidad === personasBuscadas || cabana.capacidad === 0;
-    });
+    const capacidadesDisponibles = arregloCabanas
+        .filter(cabana => cabana.capacidad >= personasBuscadas)
+        .map(cabana => cabana.capacidad);
+        
+    const capacidadIdeal = capacidadesDisponibles.length > 0 
+        ? Math.min(...capacidadesDisponibles) 
+        : -1; 
+    
+    return arregloCabanas.filter(cabana => 
+        cabana.capacidad === capacidadIdeal || cabana.capacidad === 0
+    );
 }
 
 export { renderizarCabanas, filtrarPorCapacidad };
