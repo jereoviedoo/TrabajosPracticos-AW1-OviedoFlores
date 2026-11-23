@@ -18,6 +18,25 @@ export function inicializarFormulario() {
     formularioContacto.addEventListener('submit', async (evento) => {
         evento.preventDefault();
 
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+
+        if (nombre.length < 3) {
+            alert('Por favor, ingresá tu nombre y apellido (mínimo 3 caracteres).');
+            return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            alert('Por favor, ingresá un correo electrónico válido.');
+            return;
+        }
+
+        if (!/^[0-9]{8,}$/.test(telefono)) {
+            alert('Por favor, ingresá un número de teléfono válido (solo números, mínimo 8 dígitos).');
+            return;
+        }
+
         const textoOriginal = botonEnviar.textContent;
         botonEnviar.textContent = 'Enviando...';
         botonEnviar.disabled = true;
