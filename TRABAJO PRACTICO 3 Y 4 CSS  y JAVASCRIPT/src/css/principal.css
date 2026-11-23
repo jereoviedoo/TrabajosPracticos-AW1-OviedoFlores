@@ -613,8 +613,6 @@ dialog.modal-lightbox::backdrop {
     font-size: 0.8rem;
 }
 
-
-
 @media (min-width: 768px) {
     
     section {
@@ -709,7 +707,11 @@ dialog.modal-lightbox::backdrop {
     }
 
     .cabanas__filtro-contenedor {
-        justify-content: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     .cabanas__filtro {

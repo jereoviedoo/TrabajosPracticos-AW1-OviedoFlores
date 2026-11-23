@@ -73,12 +73,10 @@ section {
     color: var(--color-blanco);
 }
 
-
 .nosotros, .servicios, .galeria, .cabanas, .contacto {
     padding: 40px 20px; 
     text-align: center;
 }
-
 
 .header {
     background-color: var(--color-oliva);
@@ -86,6 +84,7 @@ section {
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -326,6 +325,7 @@ section {
 .galeria__item--oculto {
     display: none;
 }
+
 .galeria__item.mostrar {
     display: block !important;
 }
@@ -613,10 +613,29 @@ dialog.modal-lightbox::backdrop {
     font-size: 0.8rem;
 }
 
+.btn-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: var(--color-blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
 
+.btn-whatsapp:hover {
+    transform: scale(1.1);
+}
 
 @media (min-width: 768px) {
-    
     section {
         scroll-margin-top: 85px;
     }
@@ -772,4 +791,80 @@ dialog.modal-lightbox::backdrop {
     .galeria__item--oculto-pc {
         display: none;
     }
+}
+
+.modal__caja--exito {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.modal__icono-exito {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px auto;
+    background-color: var(--color-oliva);
+    color: var(--color-blanco);
+    border: 3px solid var(--color-beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal__acciones--centradas {
+    justify-content: center;
+}
+.footer__enlace {
+    display: inline-block;
+    color: var(--color-blanco);
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-bottom: 10px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.footer__enlace:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.header__titulo-enlace {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.politicas {
+    padding: 60px 20px;
+    background-color: var(--color-blanco);
+}
+
+.politicas__contenedor {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.politicas__bloque {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.politicas__bloque-titulo {
+    color: var(--color-marron);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.politicas__bloque p {
+    margin-bottom: 10px;
+}
+
+.politicas__acciones {
+    margin-top: 35px;
+    text-align: center;
 }
