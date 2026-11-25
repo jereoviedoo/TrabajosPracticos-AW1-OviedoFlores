@@ -8,7 +8,7 @@ function renderizarCabanas(contenedor, arregloCabanas) {
                 <img src="${cabana.imagen}" alt="${cabana.nombre}">
             </div>
             <h3 class="tarjeta__titulo">${cabana.nombre}</h3>
-            <p style="margin-bottom: 15px; font-size: 0.9rem;">
+            <p class="tarjeta__capacidad">
                 ${cabana.capacidad === 0 ? 'Área de uso común' : 'Hasta ' + cabana.capacidad + ' huéspedes'}
             </p>
             <button class="boton boton--oliva boton-info" data-id="${cabana.id}">MÁS INFORMACIÓN</button>
@@ -39,4 +39,10 @@ function filtrarPorCapacidad(arregloCabanas, capacidadSeleccionada) {
     );
 }
 
-export { renderizarCabanas, filtrarPorCapacidad };
+function validarTelefono(telefono) {
+    const telefonoLimpio = String(telefono).trim();
+    const regexTelefono = /^[0-9]{8,}$/;
+    return regexTelefono.test(telefonoLimpio);
+}
+
+export { renderizarCabanas, filtrarPorCapacidad, validarTelefono };
