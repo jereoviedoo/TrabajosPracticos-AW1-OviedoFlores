@@ -1,0 +1,23 @@
+name: CI - Tests Unitarios Cabañas Suyana
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ejecutar tests unitarios nativos de Node
+        working-directory: "TRABAJO PRACTICO 3 Y 4  CORREGIDO"
+        run: npm test
